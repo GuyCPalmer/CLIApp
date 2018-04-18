@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/GuyCPalmer/CLIApp/issues"
   },
-  "homepage": "https://github.com/GuyCPalmer/CLIApp#readme"
+  "homepage": "https://github.com/GuyCPalmer/CLIApp#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "mysql": "^2.15.0"
+  }
 }
