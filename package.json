@@ -1,0 +1,19 @@
+{
+  "name": "cliapp",
+  "version": "1.0.0",
+  "description": "blamazon",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuyCPalmer/CLIApp.git"
+  },
+  "author": "Guy Palmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuyCPalmer/CLIApp/issues"
+  },
+  "homepage": "https://github.com/GuyCPalmer/CLIApp#readme"
+}
