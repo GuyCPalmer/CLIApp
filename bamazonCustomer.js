@@ -21,22 +21,25 @@ connection.connect(function(err) {
 })
 
 function queryAllProducts() {
-    connection.query("SELECT * FROM products", function(err, res) {
+    connection.query("SELECT id, product_name, price FROM products", function(err, res) {
         if (err) throw err;
-        for (var i = 0; i < res.length; i++) {
             console.table("\nOUR PRODUCTS", res);
-        }
     })
 }
 
 function promptUser() {
     inquirer.prompt([
         {
-            name: "id",
-            message: "what is the ID of the product you would like to purchase?\n"
+            name: "confirm",
+            message: "Would you like to make a purchase today?\n",
+            default: true
         },
         {
-            name: "quanitity",
+            name: "id",
+            message: "What is the Item you would like to Purchase?" 
+        },
+        {
+            name: "quantity",
             message: "How many units would you like to buy?" 
         },
         {
