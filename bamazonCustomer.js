@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var table = require("console.table");
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -23,9 +24,8 @@ function queryAllProducts() {
     connection.query("SELECT * FROM products", function(err, res) {
         if (err) throw err;
         for (var i = 0; i < res.length; i++) {
-            console.log(res[i].id + " | " + res[i].product_name + " | $" + res[i].price);
+            console.table("\nOUR PRODUCTS", res);
         }
-        console.log("--------------------\n");
     })
 }
 
@@ -33,16 +33,16 @@ function promptUser() {
     inquirer.prompt([
         {
             name: "id",
-            message: "what is the ID of the product you would like to purchase?"
+            message: "what is the ID of the product you would like to purchase?\n"
         },
         {
             name: "quanitity",
-            message: "\nHow many units would you like to buy?" 
+            message: "How many units would you like to buy?" 
         },
         {
             type: "confirm",
             name: "confirm",
-            message: "\nWould you like to confirm this purchase?"
+            message: "Would you like to confirm this purchase?"
         }
     ]).then(function checkStore(answers) {
         //check database to see if there is enough product
