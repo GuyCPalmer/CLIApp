@@ -29,15 +29,17 @@ function queryAllProducts() {
 function promptUser() {
     inquirer.prompt([
             {
+                type: "input",
                 name: "id",
                 message: "What item would you like to purchase today?"
             },
             {
+                type: "input",
                 name: "quantity",
                 message: "How many units would you like to purchase?\n"
             }
         ]).then(function checkStore(answers) {
-            for (var i = 0; i < quantity.length; i++) {
+            for (var i = 0; i < res[0].quantity; i++) {
                 if (parseInt(answers.id) === res[i].id) {
                     if (res[i].quantity >= (parseInt(answers.quantity))) {
                         console.log("\nThank you for your order.");
