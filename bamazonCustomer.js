@@ -37,9 +37,9 @@ function promptUser() {
                 message: "How many units would you like to purchase?\n"
             }
         ]).then(function checkStore(answers) {
-            for (var i = 0; i < res.length; i++) {
-                if (parseInt(ansers.id) === res[i].id) {
-                    if (res[i].quanitiy >= (parseInt(answers.quantity))) {
+            for (var i = 0; i < quantity.length; i++) {
+                if (parseInt(answers.id) === res[i].id) {
+                    if (res[i].quantity >= (parseInt(answers.quantity))) {
                         console.log("\nThank you for your order.");
 
                         var purchaseCost = parseFloat(res[i].price * answers.quantity);
@@ -48,7 +48,7 @@ function promptUser() {
                         var newQuantity = res[i].quantity - (parseInt(answers.quantity));
 
                         connection.query("UPDATE products SET ? Where ?", [{
-                            quntity: newQuantity
+                            quantity: newQuantity
                         }, {
                             id: answers.id
                         }], function (err, res) {
