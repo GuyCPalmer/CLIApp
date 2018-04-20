@@ -30,12 +30,12 @@ function promptUser() {
     inquirer.prompt([
             {
                 name: "id",
-                message: "What item would you like to purchase today?\n"
+                message: "What item would you like to purchase today?"
             },
             {
                 name: "quantity",
                 message: "How many units would you like to purchase?\n"
-            },
+            }
         ]).then(function checkStore(answers) {
             for (var i = 0; i < res.length; i++) {
                 if (parseInt(ansers.id) === res[i].id) {
