@@ -36,16 +36,16 @@ function promptUser() {
         },
         {
             name: "id",
-            message: "What is the Item you would like to Purchase?" 
+            message: "What item would you like to Purchase?\n" 
         },
         {
             name: "quantity",
-            message: "How many units would you like to buy?" 
+            message: "How many units would you like to buy?\n" 
         },
         {
             type: "confirm",
             name: "confirm",
-            message: "Would you like to confirm this purchase?"
+            message: "Would you like to confirm this purchase?\n"
         }
     ]).then(function checkStore(answers) {
         //check database to see if there is enough product

@@ -14,9 +14,9 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, quantiy)
-VALUES ("Surf Board", "Sporting Goods", 400.00, 10),
-        ("MacBook Air", "Electronics", 1500.00, 15),
-        ("UE Boom Speaker", "Electronics", 99.00, 25),
+VALUES ("Surf Board", "Sporting Goods", 429.99, 10),
+        ("MacBook Air", "Electronics", 1500.99, 15),
+        ("UE Boom Speaker", "Electronics", 99.97, 25),
         ("Football", "Sporting Goods", 19.99, 50),
         ("My Pillow", "Home Goods", 45.99, 20),
         ("Fleece Blanket", "Home Goods", 24.99, 10),
