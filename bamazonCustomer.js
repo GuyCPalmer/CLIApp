@@ -29,17 +29,18 @@ function queryAllProducts() {
 function promptUser() {
     inquirer.prompt([
             {
-                type: "input",
                 name: "id",
                 message: "What item would you like to purchase today?"
             },
             {
-                type: "input",
                 name: "quantity",
                 message: "How many units would you like to purchase?\n"
             }
-        ]).then(function checkStore(answers) {
-            for (var i = 0; i < res[0].quantity; i++) {
+        ]).then(function(answers) {
+
+            let query = connection.query ("SELECT * FROM products WHERE id=?", answers.id, function (err, res){
+                if(err) throw err;
+            for (var i = 0; i < res.length; i++) {
                 if (parseInt(answers.id) === res[i].id) {
                     if (res[i].quantity >= (parseInt(answers.quantity))) {
                         console.log("\nThank you for your order.");
@@ -56,7 +57,7 @@ function promptUser() {
                         }], function (err, res) {
                             if (err) console.log(err);
                             else {
-                                printUpdatedProducts();
+                                UpdateQuantity;
                             }
                         })
                     } else {
@@ -65,21 +66,6 @@ function promptUser() {
                     }
                 }
             }
-        })
-        .catch(function (err) {
-            if (err) {
-                console.log(err);
-            }
-        })
-}
-
-function printUpdatedProducts() {
-    connection.query("SELECT * FROM products", function(err, res) {
-        if(err) throw err;
-        console.log("");
-        for (var i = 0; i < res.length; i++) {
-            console.table(res[i].product_name + " | Quantity left: " + res[i].quantity);
-        }
-    })
-    connection.end();
-}
+        })        
+    },
+)}
