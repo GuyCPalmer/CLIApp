@@ -56,9 +56,7 @@ function promptUser() {
                             id: answers.id
                         }], function (err, res) {
                             if (err) console.log(err);
-                            else {
-                                UpdateQuantity;
-                            }
+                        
                         })
                     } else {
                         console.log("\nI'm sorry, we dont enough in stock, but will be recieving a new shipment soon!\n");
