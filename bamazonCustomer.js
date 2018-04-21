@@ -10,14 +10,16 @@ var connection = mysql.createConnection({
     database: "bamazonDB"
 });
 
-connection.connect(function (err) {
+connection.connect(function(err) {
     if (err) {
-        throw err;
-    } else {
-        queryAllProducts();
+        throw (err);
+    }
+    else {
+        queryAllProducts()
         promptUser();
     }
 })
+
 
 function queryAllProducts() {
     connection.query("SELECT id, product_name, price FROM products", function (err, res) {
@@ -59,7 +61,7 @@ function promptUser() {
                         
                         })
                     } else {
-                        console.log("\nI'm sorry, we dont enough in stock, but will be recieving a new shipment soon!\n");
+                        console.log("\nI'm sorry, we don't have that many in stock, but will be recieving a new shipment soon!\n");
                         promptUser(res);
                     }
                 }
